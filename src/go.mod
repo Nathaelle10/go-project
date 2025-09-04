@@ -1,4 +1,4 @@
-module cpu-monitor
+module monitoring
 
 go 1.25.0
 

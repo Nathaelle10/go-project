@@ -27,7 +27,7 @@ async function fetchStatus() {
     const load = data.load || {};
     const network = data.network || [];
 
-    document.getElementById("cpu").innerHTML = `
+    document.getElementById("card-cpu").innerHTML = `
       <div class="label">🧠 CPU</div>
       Utilisation: ${data.cpu_usage?.toFixed(2) || "N/A"}%<br>
       Modèle: ${data.cpu_model || "N/A"}<br>
@@ -35,25 +35,25 @@ async function fetchStatus() {
       Charge 1/5/15 min: ${load.load1?.toFixed(2) || "?"}, ${load.load5?.toFixed(2) || "?"}, ${load.load15?.toFixed(2) || "?"}
     `;
 
-    document.getElementById("memory").innerHTML = `
+    document.getElementById("card-memory").innerHTML = `
       <div class="label">💾 Mémoire</div>
       Utilisation: ${memory.used && memory.total ? ((memory.used / memory.total) * 100).toFixed(1) : "?"}%<br>
       RAM: ${memory.total ? (memory.total / 1e9).toFixed(2) : "?"} GB
     `;
 
-    document.getElementById("disk").innerHTML = `
+    document.getElementById("card-disk").innerHTML = `
       <div class="label">📁 Disque</div>
       Utilisation: ${disk.usedPercent?.toFixed(1) || "?"}%<br>
       Taille: ${disk.total ? (disk.total / 1e9).toFixed(2) : "?"} GB
     `;
 
-    document.getElementById("net").innerHTML = `
+    document.getElementById("card-net").innerHTML = `
       <div class="label">🌐 Réseau</div>
       Interfaces: ${network.length}<br>
       Connexions actives: ${data.connections ?? "?"}
     `;
 
-    document.getElementById("host").innerHTML = `
+    document.getElementById("card-host").innerHTML = `
       <div class="label">🖥️ Système</div>
       OS: ${host.platform || "?"} ${host.platformVersion || ""}<br>
       Uptime: ${(data.uptime / 3600).toFixed(1) || "?"} heures
