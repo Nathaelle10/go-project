@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Système</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/shoelace.js"></script>
+  <script src="assets/js/dashboard.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="sl-theme-light">
+
+  <header>
+  <h1>📊 Dashboard Système</h1>
+
+    <nav>
+      <sl-tab-group>
+        <sl-tab slot="nav" panel="cpu">CPU</sl-tab>
+        <sl-tab slot="nav" panel="host">Host</sl-tab>
+        <sl-tab slot="nav" panel="network">Network</sl-tab>
+        ...
+      </sl-tab-group>
+    </nav>
+
+    <div id="pages">
+      <div id="cpu" class="page">Contenu CPU</div>
+      <div id="host" class="page">Contenu Host</div>
+      <div id="network" class="page">Contenu Réseau</div>
+      ...
+    </div>
+
+  </header>
+
+  <!-- Scan Card -->
+  <sl-card class="card">
+      <strong class="label">🔍 Scanner une IP</strong><br><br>
+      <sl-input id="scan-ip" placeholder="Entrez une IP à scanner"></sl-input>
+
+      <sl-button variant="secondary" onclick="scanIP(document.getElementById('scan-ip').value)">Scanner</sl-button>
+      <div id="scan-results"></div>
+  </sl-card>
+
+  <!-- Info Cards -->
+  <sl-card class="card" id="cpu"></sl-card>
+  <sl-card class="card" id="memory"></sl-card>
+  <sl-card class="card" id="disk"></sl-card>
+  <sl-card class="card" id="net"></sl-card>
+  <sl-card class="card" id="host"></sl-card>
+
+  <!-- Optionally: charts -->
+
+  <sl-card class="chart-container" >
+    <canvas id="cpu-chart" style="width: 400px; height: 200px;"></canvas>
+
+  </sl-card>
+
+
+</body>
+</html>

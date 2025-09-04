@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  padding: 2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+#cpu-chart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
